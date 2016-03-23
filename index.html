@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PEC01 P7 Teresa Hita</title>
+  <link rel="stylesheet" type="text/css" href="stylos.css">
+  <script src="angular.min.js"></script>
+  <script src="conversorMonedas.js"></script>
+  <script src="gestorMonedas.js"></script>
+</head>
+<body >
+<h1>Conversor de monedas</h1>
+  <div ng-app="gestorMonedas" ng-controller="ControladorGestorMonedas as invoice">
+  <div class="row">
+    Cantidad: <input type="number" min="0" ng-model="invoice.ctd" required >
+	<!--la cantidad es un campo requerido-->
+  </div>
+  <div class="row">
+    <select ng-model="invoice.monedaEntrada">
+	<!--se repite tantas veces como monedas tenemos-->
+      <option ng-repeat="m in invoice.monedas">{{m}}</option>
+    </select>
+  </div>
+  <div class="row">
+  <p class="estilop">Convertir cantidad a:</p>
+    <select ng-model="invoice.monedaSalida">
+	<!--se repite tantas veces como monedas tenemos-->
+      <option ng-repeat="m in invoice.monedas">{{m}}</option>
+    </select>
+  </div>
+  <div class="row">
+    <b>Total:</b>
+    <span>
+       {{invoice.total(m)}}
+    </span>
+	  <div class="row">
+	  <!--muestra el resultado final como solo lectura-->
+    <input class="ocultar" type="text" ng-readonly="true" ng-model="invoice.monedaSalida">
+  </div>
+  </div>
+</div>
+</body>
+</html>
+

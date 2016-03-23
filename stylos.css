@@ -1,0 +1,11 @@
+body {font-family: arial, helvetica, sans-serif;}
+.row{
+	display:inline-block;
+	width:19%;
+	}
+	.estilop{display:inline-block;}
+.ocultar {
+	border: 1px white;
+    font-weight: 700;
+    font-size: 15px;
+}
